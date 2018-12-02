@@ -1,0 +1,15 @@
+{
+  "name": "mssqlbpcase",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tedious": "^3.0.1",
+    "tedious-connection-pool": "^1.0.5"
+  }
+}
