@@ -11,7 +11,7 @@ const sqlPoolConfig = {
 
 const sqlConnectionConfig = {
     userName: 'fivanov_bpcli410',
-    password: 'Axiom123',
+    password: '',
     server: '10.192.1.68',
     port: 1433,
     options: {
@@ -56,8 +56,8 @@ function runTransaction (transactionName, deleteSqlStatement, insertSqlStatement
     
                 logError(err)
             }
-            console.info(`${new Date() .toISOString()} :: ${transactionName} :: "${arguments[1]}" completed. Rows affected: ` + rowCount)
             eventHandler.emit(`${transactionName}::deleteCompleted`)
+            console.info(`${new Date() .toISOString()} :: ${transactionName} :: "${arguments[1]}" completed. Rows affected: ` + rowCount)
             acquiredConnection.execSqlBatch(insertRequest)
             console.info(`${new Date() .toISOString()} :: ${transactionName} :: "${arguments[2]}" started`)
         })
